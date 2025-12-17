@@ -1,0 +1,20 @@
+# CMake build files
+/build/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+
+# Executables
+*.exe
+freelist_demo
+
+# Object files
+*.o
+*.d
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+*.swp
+*~
