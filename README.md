@@ -27,7 +27,7 @@ To build and run this project, you will need a C++ compiler (like GCC, Clang, or
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/custom-memory-allocator.git
+    git clone https://github.com/sandeep172918/custom_memory_allocator.git
     cd custom-memory-allocator
     ```
 
