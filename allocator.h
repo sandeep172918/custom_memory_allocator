@@ -5,12 +5,19 @@
 
 class FreeListAllocator {
 public:
-    FreeListAllocator(std::size_t size);
+    enum class AllocationStrategy {
+        FirstFit,
+        BestFit
+    };
+
+    FreeListAllocator(std::size_t size, AllocationStrategy strategy = AllocationStrategy::FirstFit);
     ~FreeListAllocator();
 
     void* allocate(std::size_t size, std::size_t alignment = alignof(void*));
     void deallocate(void* ptr);
     void reset();
+    void printStatus() const;
+    std::size_t getAllocationSize(void* ptr) const;
 
 private:
     // Struct to hold allocation metadata. Placed just before the user's data block.
@@ -30,6 +37,7 @@ private:
 
     void* m_start = nullptr;
     std::size_t m_size;
+    AllocationStrategy m_strategy;
     
     FreeNode* m_free_list_head = nullptr;
 };
